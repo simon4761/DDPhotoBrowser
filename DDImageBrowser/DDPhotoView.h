@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  DDPhotoView.h
 //  DDImageBrowser
 //
 //  Created by Aimeow on 8/4/15.
@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DDPhoto.h"
 
-@interface ViewController : UICollectionViewController
+@interface DDPhotoView : UIScrollView
 
+@property (nonatomic , strong) DDPhoto *photo;
 
 @end
-

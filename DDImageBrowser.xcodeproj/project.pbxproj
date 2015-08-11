@@ -14,6 +14,10 @@
 		FF28B0D31B705EB9007CA45F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF28B0D21B705EB9007CA45F /* Images.xcassets */; };
 		FF28B0D61B705EB9007CA45F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF28B0D41B705EB9007CA45F /* LaunchScreen.xib */; };
 		FF28B0E21B705EB9007CA45F /* DDImageBrowserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF28B0E11B705EB9007CA45F /* DDImageBrowserTests.m */; };
+		FF28B0EE1B705F32007CA45F /* DDImageBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = FF28B0ED1B705F32007CA45F /* DDImageBrowser.m */; };
+		FF28B0F11B705FBA007CA45F /* DDPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF28B0F01B705FBA007CA45F /* DDPhotoView.m */; };
+		FF3B50021B7494FC00B9E569 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3B50011B7494FC00B9E569 /* ViewController2.m */; };
+		FFF504321B72FFE500B9A55E /* DDPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF504311B72FFE500B9A55E /* DDPhoto.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,14 @@
 		FF28B0DB1B705EB9007CA45F /* DDImageBrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DDImageBrowserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF28B0E01B705EB9007CA45F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF28B0E11B705EB9007CA45F /* DDImageBrowserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDImageBrowserTests.m; sourceTree = "<group>"; };
+		FF28B0EC1B705F32007CA45F /* DDImageBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDImageBrowser.h; sourceTree = "<group>"; };
+		FF28B0ED1B705F32007CA45F /* DDImageBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDImageBrowser.m; sourceTree = "<group>"; };
+		FF28B0EF1B705FBA007CA45F /* DDPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPhotoView.h; sourceTree = "<group>"; };
+		FF28B0F01B705FBA007CA45F /* DDPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDPhotoView.m; sourceTree = "<group>"; };
+		FF3B50001B7494FC00B9E569 /* ViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
+		FF3B50011B7494FC00B9E569 /* ViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
+		FFF504301B72FFE500B9A55E /* DDPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPhoto.h; sourceTree = "<group>"; };
+		FFF504311B72FFE500B9A55E /* DDPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDPhoto.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +93,7 @@
 		FF28B0C41B705EB9007CA45F /* DDImageBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				FF28B0EB1B705F15007CA45F /* DDImageBrowser */,
 				FF28B0C91B705EB9007CA45F /* AppDelegate.h */,
 				FF28B0CA1B705EB9007CA45F /* AppDelegate.m */,
 				FF28B0CC1B705EB9007CA45F /* ViewController.h */,
@@ -89,6 +102,8 @@
 				FF28B0D21B705EB9007CA45F /* Images.xcassets */,
 				FF28B0D41B705EB9007CA45F /* LaunchScreen.xib */,
 				FF28B0C51B705EB9007CA45F /* Supporting Files */,
+				FF3B50001B7494FC00B9E569 /* ViewController2.h */,
+				FF3B50011B7494FC00B9E569 /* ViewController2.m */,
 			);
 			path = DDImageBrowser;
 			sourceTree = "<group>";
@@ -117,6 +132,19 @@
 				FF28B0E01B705EB9007CA45F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FF28B0EB1B705F15007CA45F /* DDImageBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				FF28B0EC1B705F32007CA45F /* DDImageBrowser.h */,
+				FF28B0ED1B705F32007CA45F /* DDImageBrowser.m */,
+				FF28B0EF1B705FBA007CA45F /* DDPhotoView.h */,
+				FF28B0F01B705FBA007CA45F /* DDPhotoView.m */,
+				FFF504301B72FFE500B9A55E /* DDPhoto.h */,
+				FFF504311B72FFE500B9A55E /* DDPhoto.m */,
+			);
+			name = DDImageBrowser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,8 +247,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF3B50021B7494FC00B9E569 /* ViewController2.m in Sources */,
+				FFF504321B72FFE500B9A55E /* DDPhoto.m in Sources */,
 				FF28B0CE1B705EB9007CA45F /* ViewController.m in Sources */,
+				FF28B0F11B705FBA007CA45F /* DDPhotoView.m in Sources */,
 				FF28B0CB1B705EB9007CA45F /* AppDelegate.m in Sources */,
+				FF28B0EE1B705F32007CA45F /* DDImageBrowser.m in Sources */,
 				FF28B0C81B705EB9007CA45F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,6 +382,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DDImageBrowser/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -360,6 +393,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DDImageBrowser/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -418,6 +452,7 @@
 				FF28B0E71B705EB9007CA45F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FF28B0E81B705EB9007CA45F /* Build configuration list for PBXNativeTarget "DDImageBrowserTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +461,7 @@
 				FF28B0EA1B705EB9007CA45F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
