@@ -9,8 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "DDPhotoView.h"
 
-@interface DDImageBrowser : UIViewController
+@interface DDPhotoBrowser : UIViewController
 
+///存放DDPhoto的数组
 @property (nonatomic , strong) NSMutableArray *photosArray;
+@property (nonatomic , assign) NSInteger currectPhotoIndex;
+
+- (id)initWithPhotosArray:(NSArray *)photosArray;
+
+- (void)show;
+- (void)hide;
 
 @end

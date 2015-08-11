@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C88023F3-D25C-49D3-8942-C2350B38C697</string>
+	<key>IDESourceControlProjectName</key>
+	<string>DDImageBrowser</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>83378F30B5DDC382125C865803CC6A7D86828D83</key>
+		<string>https://git.oschina.net/aimeow_nomis/DDImageBrowser.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>DDImageBrowser.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>83378F30B5DDC382125C865803CC6A7D86828D83</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://git.oschina.net/aimeow_nomis/DDImageBrowser.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>83378F30B5DDC382125C865803CC6A7D86828D83</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>83378F30B5DDC382125C865803CC6A7D86828D83</string>
+			<key>IDESourceControlWCCName</key>
+			<string>DDPhotoBrowser_old</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -7,10 +7,11 @@
 //
 
 #import "DDPhotoView.h"
+#import <SDWebImageManager.h>
 
-@interface DDPhotoView()<UIScrollViewDelegate>
-
-@property (nonatomic , strong) UIImageView *imageView;
+@interface DDPhotoView ()<UIScrollViewDelegate>{
+    UIActivityIndicatorView *_activityView;
+}
 
 @end
 
@@ -18,81 +19,131 @@
 
 - (instancetype)init
 {
-    self = [super init];
+    self = [super initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
     if (self) {
+        _imageView = UIImageView.new;
+        _imageView.frame = [[UIScreen mainScreen] bounds];
+        _imageView.backgroundColor = [UIColor clearColor];
+        _imageView.contentMode = UIViewContentModeScaleAspectFill;
+        _imageView.clipsToBounds = YES;
+        [self addSubview:_imageView];
+        
+        _activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        _activityView.center = self.center;
+        [self addSubview:_activityView];
+        _activityView.hidden = YES;
+        
         self.backgroundColor = [UIColor clearColor];
         self.delegate = self;
         self.showsHorizontalScrollIndicator = NO;
         self.showsVerticalScrollIndicator = NO;
         self.decelerationRate = UIScrollViewDecelerationRateFast;
-        self.userInteractionEnabled = YES;
+        self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        [self setUserInteractionEnabled:YES];
+        
         self.scrollEnabled = NO;
-        [self addSubview:self.imageView];
     }
     return self;
 }
 
-- (UIImageView *)imageView
-{
-    if (!_imageView) {
-        _imageView = [UIImageView new];
-        _imageView.backgroundColor = [UIColor clearColor];
-        _imageView.contentMode = UIViewContentModeScaleAspectFit;
+- (void)startAnimation{
+    _activityView.hidden = NO;
+    [_activityView startAnimating];
+}
+
+- (void)stopAnimation{
+    _activityView.hidden = YES;
+    [_activityView stopAnimating];
+}
+
+- (void)setItem:(DDPhoto *)item{
+    _item = item;
+    
+    [self startAnimation];
+    
+    if ([item.selectView isKindOfClass:[UIImageView class]]) {
+        if (item.selectView.image) {
+            self.imageView.image = item.selectView.image;
+        }
     }
+    
+    [[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:item.originImageUrl] options:SDWebImageRefreshCached progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+        
+    } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+   
+        [self.imageView setImage:image];
+        [self stopAnimation];
+        
+        [self updateImgViewFrameAfterImageSet];
+        
+        CATransition *animation = [CATransition animation];
+        [animation setType:kCATransitionFade];
+        [animation setDuration:0.15f];
+        [animation setRemovedOnCompletion:YES];
+        [_imageView.layer addAnimation:animation forKey:@"fade"];
+        
+        self.scrollEnabled = YES;
+    }];
+}
+
+- (void)updateImgViewFrameAfterImageSet
+{
+    if (_imageView.image == nil) {
+        return;
+    }
+    CGSize size = [self validImageSize:_imageView.image];
+    _imageView.frame = CGRectMake(0, 0, size.width, size.height);
+    _imageView.center = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);
+    
+    [self setMaxZoomScalesForCurrentBounds];
+}
+
+- (CGSize)validImageSize:(UIImage *)imageToShow
+{
+    CGFloat width = imageToShow.size.width/[UIScreen mainScreen].scale;
+    CGFloat height = imageToShow.size.height/[UIScreen mainScreen].scale;
+    
+    
+    // 不超过当前view大小
+    //    if (width>self.width) {
+    //        height = height*self.width/width;
+    //        width = self.width;
+    //    }
+    //    if (height>self.height) {
+    //        width = width*self.height/height;
+    //        height = self.height;
+    //    }
+    
+    if (width/height>self.frame.size.width/self.frame.size.height) {
+        height = self.frame.size.width*height/width;
+        width = self.frame.size.width;
+    }else {
+        width = width*self.frame.size.height/height;
+        height = self.frame.size.height;
+    }
+    
+    return CGSizeMake(width, height);
+}
+
+- (void)setMaxZoomScalesForCurrentBounds {
+    CGSize boundsSize = self.bounds.size;
+    CGSize imageSize = _imageView.bounds.size;
+    
+    CGFloat xScale = boundsSize.width / imageSize.width;
+    CGFloat yScale = boundsSize.height / imageSize.height;
+    CGFloat maxScale = MAX(MAX(xScale, yScale), 2.0);
+    
+    self.maximumZoomScale = maxScale;
+}
+
+#pragma mark - UIScrollViewDelegate
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
     return _imageView;
 }
 
-- (void)setPhoto:(DDPhoto *)photo
+- (void)scrollViewDidZoom:(UIScrollView *)scrollView
 {
-    _photo = photo;
+    _imageView.frame = CGRectMake(floor((MAX(scrollView.contentSize.width, scrollView.frame.size.width)-_imageView.frame.size.width)/2), floor((MAX(scrollView.contentSize.height, scrollView.frame.size.height)-_imageView.frame.size.height)/2), _imageView.frame.size.width, _imageView.frame.size.height);
 }
-
-#pragma mark- UIScrollView Delegate Methods
-
-- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
-{
-    return self.imageView;
-}
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    self.imageView.frame = CGRectMake(floor((fmax(scrollView.contentSize.width, scrollView.frame.size.width) - self.imageView.frame.size.width)/2), floor((fmax(scrollView.contentSize.height, scrollView.frame.size.height)-self.imageView.frame.size.height)/2), self.imageView.frame.size.width, self.imageView.frame.size.height);
-}
-
-
-//func setNewPhoto(photo : ImageEntity)
-//{
-//    self.photo = photo
-//    imageView.image = photo.placeHolder
-//    photoViewDelegate?.AmPhotoImageDidStartLoad?(self)
-//    SDWebImageManager.sharedManager().downloadImageWithURL(NSURL(string: photo.bigPicUrl!) , options: SDWebImageOptions.RefreshCached, progress: { (receivedSize : Int,  expectedSize : Int) -> Void in
-//        
-//    }) { (image : UIImage!, error : NSError!, cacheType : SDImageCacheType, finished : Bool, imageURL : NSURL!) -> Void in
-//        self.photoViewDelegate?.AmPhotoImageDidFinishLoad?(self)
-//        self.imageView.image = image
-//        photo.placeHolder = image
-//        self.scrollEnabled = true
-//        self.adjustFrame()
-//    }
-//}
-//
-//func adjustFrame()
-//{
-//    if self.imageView.image != nil
-//    {
-//        self.imageView.height = self.bounds.size.width / self.imageView.image!.size.width*self.imageView.image!.size.height
-//    }
-//    self.imageView.width = self.bounds.size.width
-//    
-//    if(self.imageView.height>=self.bounds.size.height){
-//        self.imageView.top = 0;
-//    }
-//    else{
-//        self.imageView.top = self.bounds.size.height/2 -  self.imageView.height/2
-//    }
-//    
-//    var maxScale : CGFloat = 2.0
-//    self.maximumZoomScale = maxScale
-//}
 
 @end

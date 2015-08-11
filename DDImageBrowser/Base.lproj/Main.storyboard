@@ -42,47 +42,61 @@
             <point key="canvasLocation" x="370" y="450"/>
         </scene>
         <!--View Controller2-->
-        <scene sceneID="Vuh-PU-Q7A">
+        <scene sceneID="wkh-g2-fNh">
             <objects>
-                <viewController id="PWX-Sj-bx0" customClass="ViewController2" sceneMemberID="viewController">
+                <viewController id="Ijt-3U-nM7" customClass="ViewController2" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="eGA-hm-PfM"/>
-                        <viewControllerLayoutGuide type="bottom" id="B1N-2K-qBo"/>
+                        <viewControllerLayoutGuide type="top" id="vsk-eK-VL5"/>
+                        <viewControllerLayoutGuide type="bottom" id="S05-CM-T78"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Usq-Sf-V5u">
+                    <view key="view" contentMode="scaleToFill" id="6eq-gN-aix">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Olc-It-dfQ">
-                                <rect key="frame" x="279" y="289" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Deq-0X-GTU">
-                                <rect key="frame" x="58" y="48" width="46" height="30"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="click:" destination="PWX-Sj-bx0" eventType="touchUpInside" id="IB3-uM-coX"/>
-                                </connections>
-                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Oz-Qo-aEn">
+                                <rect key="frame" x="10" y="-35" width="87" height="87"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hvS-Tr-FZQ">
+                                <rect key="frame" x="105" y="-35" width="87" height="87"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C1e-h2-DK3">
+                                <rect key="frame" x="105" y="60" width="87" height="87"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b9E-4f-TN2">
+                                <rect key="frame" x="10" y="60" width="87" height="87"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="54h-37-72N">
+                                <rect key="frame" x="10" y="155" width="87" height="87"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cBk-VJ-T9n">
+                                <rect key="frame" x="200" y="-35" width="87" height="87"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UTb-cB-gYE">
+                                <rect key="frame" x="200" y="60" width="87" height="87"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerY" secondItem="Olc-It-dfQ" secondAttribute="centerY" id="ROV-SI-LqM"/>
-                            <constraint firstAttribute="centerX" secondItem="Olc-It-dfQ" secondAttribute="centerX" id="max-BL-y12"/>
-                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="x" destination="ROV-SI-LqM" id="WOt-Lc-UrK"/>
-                        <outlet property="y" destination="max-BL-y12" id="qvR-jL-4ID"/>
+                        <outlet property="imageView1" destination="3Oz-Qo-aEn" id="ceg-6E-s1N"/>
+                        <outlet property="imageView2" destination="hvS-Tr-FZQ" id="FBy-Bm-cWC"/>
+                        <outlet property="imageView3" destination="cBk-VJ-T9n" id="jJc-uy-X1G"/>
+                        <outlet property="imageView4" destination="b9E-4f-TN2" id="H4e-D5-e93"/>
+                        <outlet property="imageView5" destination="C1e-h2-DK3" id="6nW-9m-uQT"/>
+                        <outlet property="imageView6" destination="UTb-cB-gYE" id="I1J-77-dLz"/>
+                        <outlet property="imageView7" destination="54h-37-72N" id="Nma-pS-b8W"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="04E-Be-dvB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n0V-Ji-KfN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="394" y="1157"/>
+            <point key="canvasLocation" x="370" y="1160"/>
         </scene>
     </scenes>
 </document>

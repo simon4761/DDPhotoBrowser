@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52E03ED8F8E4BFF6D5F509E8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B25275A97B078C600F943B77 /* libPods.a */; };
 		FF28B0C81B705EB9007CA45F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FF28B0C71B705EB9007CA45F /* main.m */; };
 		FF28B0CB1B705EB9007CA45F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FF28B0CA1B705EB9007CA45F /* AppDelegate.m */; };
 		FF28B0CE1B705EB9007CA45F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF28B0CD1B705EB9007CA45F /* ViewController.m */; };
@@ -14,9 +15,9 @@
 		FF28B0D31B705EB9007CA45F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF28B0D21B705EB9007CA45F /* Images.xcassets */; };
 		FF28B0D61B705EB9007CA45F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF28B0D41B705EB9007CA45F /* LaunchScreen.xib */; };
 		FF28B0E21B705EB9007CA45F /* DDImageBrowserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF28B0E11B705EB9007CA45F /* DDImageBrowserTests.m */; };
-		FF28B0EE1B705F32007CA45F /* DDImageBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = FF28B0ED1B705F32007CA45F /* DDImageBrowser.m */; };
+		FF28B0EE1B705F32007CA45F /* DDPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = FF28B0ED1B705F32007CA45F /* DDPhotoBrowser.m */; };
 		FF28B0F11B705FBA007CA45F /* DDPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF28B0F01B705FBA007CA45F /* DDPhotoView.m */; };
-		FF3B50021B7494FC00B9E569 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3B50011B7494FC00B9E569 /* ViewController2.m */; };
+		FFD32C5B1B79EC7C00618CB1 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = FFD32C5A1B79EC7C00618CB1 /* ViewController2.m */; };
 		FFF504321B72FFE500B9A55E /* DDPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF504311B72FFE500B9A55E /* DDPhoto.m */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		31983B5BF6110410B54BE607 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		B25275A97B078C600F943B77 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5E535AE9D20E7F72243AB53 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		FF28B0C21B705EB9007CA45F /* DDImageBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DDImageBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF28B0C61B705EB9007CA45F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF28B0C71B705EB9007CA45F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -44,12 +48,12 @@
 		FF28B0DB1B705EB9007CA45F /* DDImageBrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DDImageBrowserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF28B0E01B705EB9007CA45F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF28B0E11B705EB9007CA45F /* DDImageBrowserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDImageBrowserTests.m; sourceTree = "<group>"; };
-		FF28B0EC1B705F32007CA45F /* DDImageBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDImageBrowser.h; sourceTree = "<group>"; };
-		FF28B0ED1B705F32007CA45F /* DDImageBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDImageBrowser.m; sourceTree = "<group>"; };
+		FF28B0EC1B705F32007CA45F /* DDPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPhotoBrowser.h; sourceTree = "<group>"; };
+		FF28B0ED1B705F32007CA45F /* DDPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDPhotoBrowser.m; sourceTree = "<group>"; };
 		FF28B0EF1B705FBA007CA45F /* DDPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPhotoView.h; sourceTree = "<group>"; };
 		FF28B0F01B705FBA007CA45F /* DDPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDPhotoView.m; sourceTree = "<group>"; };
-		FF3B50001B7494FC00B9E569 /* ViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
-		FF3B50011B7494FC00B9E569 /* ViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
+		FFD32C591B79EC7C00618CB1 /* ViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
+		FFD32C5A1B79EC7C00618CB1 /* ViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
 		FFF504301B72FFE500B9A55E /* DDPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPhoto.h; sourceTree = "<group>"; };
 		FFF504311B72FFE500B9A55E /* DDPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDPhoto.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -59,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52E03ED8F8E4BFF6D5F509E8 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +77,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D25D54F9A2DF5DDED28E5AE4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B25275A97B078C600F943B77 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D3DD9C6ACE8A3E42DDE4FE75 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D5E535AE9D20E7F72243AB53 /* Pods.debug.xcconfig */,
+				31983B5BF6110410B54BE607 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		FF28B0B91B705EB9007CA45F = {
 			isa = PBXGroup;
 			children = (
 				FF28B0C41B705EB9007CA45F /* DDImageBrowser */,
 				FF28B0DE1B705EB9007CA45F /* DDImageBrowserTests */,
 				FF28B0C31B705EB9007CA45F /* Products */,
+				D3DD9C6ACE8A3E42DDE4FE75 /* Pods */,
+				D25D54F9A2DF5DDED28E5AE4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,12 +122,12 @@
 				FF28B0CA1B705EB9007CA45F /* AppDelegate.m */,
 				FF28B0CC1B705EB9007CA45F /* ViewController.h */,
 				FF28B0CD1B705EB9007CA45F /* ViewController.m */,
+				FFD32C591B79EC7C00618CB1 /* ViewController2.h */,
+				FFD32C5A1B79EC7C00618CB1 /* ViewController2.m */,
 				FF28B0CF1B705EB9007CA45F /* Main.storyboard */,
 				FF28B0D21B705EB9007CA45F /* Images.xcassets */,
 				FF28B0D41B705EB9007CA45F /* LaunchScreen.xib */,
 				FF28B0C51B705EB9007CA45F /* Supporting Files */,
-				FF3B50001B7494FC00B9E569 /* ViewController2.h */,
-				FF3B50011B7494FC00B9E569 /* ViewController2.m */,
 			);
 			path = DDImageBrowser;
 			sourceTree = "<group>";
@@ -137,8 +161,8 @@
 		FF28B0EB1B705F15007CA45F /* DDImageBrowser */ = {
 			isa = PBXGroup;
 			children = (
-				FF28B0EC1B705F32007CA45F /* DDImageBrowser.h */,
-				FF28B0ED1B705F32007CA45F /* DDImageBrowser.m */,
+				FF28B0EC1B705F32007CA45F /* DDPhotoBrowser.h */,
+				FF28B0ED1B705F32007CA45F /* DDPhotoBrowser.m */,
 				FF28B0EF1B705FBA007CA45F /* DDPhotoView.h */,
 				FF28B0F01B705FBA007CA45F /* DDPhotoView.m */,
 				FFF504301B72FFE500B9A55E /* DDPhoto.h */,
@@ -154,9 +178,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FF28B0E51B705EB9007CA45F /* Build configuration list for PBXNativeTarget "DDImageBrowser" */;
 			buildPhases = (
+				F526CFE4017E8A582F8126FD /* Check Pods Manifest.lock */,
 				FF28B0BE1B705EB9007CA45F /* Sources */,
 				FF28B0BF1B705EB9007CA45F /* Frameworks */,
 				FF28B0C01B705EB9007CA45F /* Resources */,
+				C02D9884CF6F875B957137C6 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -242,17 +268,50 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C02D9884CF6F875B957137C6 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F526CFE4017E8A582F8126FD /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FF28B0BE1B705EB9007CA45F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF3B50021B7494FC00B9E569 /* ViewController2.m in Sources */,
+				FFD32C5B1B79EC7C00618CB1 /* ViewController2.m in Sources */,
 				FFF504321B72FFE500B9A55E /* DDPhoto.m in Sources */,
 				FF28B0CE1B705EB9007CA45F /* ViewController.m in Sources */,
 				FF28B0F11B705FBA007CA45F /* DDPhotoView.m in Sources */,
 				FF28B0CB1B705EB9007CA45F /* AppDelegate.m in Sources */,
-				FF28B0EE1B705F32007CA45F /* DDImageBrowser.m in Sources */,
+				FF28B0EE1B705F32007CA45F /* DDPhotoBrowser.m in Sources */,
 				FF28B0C81B705EB9007CA45F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,22 +438,42 @@
 		};
 		FF28B0E61B705EB9007CA45F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5E535AE9D20E7F72243AB53 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DDImageBrowser/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"-D",
+					_FOR_DEBUG_,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		FF28B0E71B705EB9007CA45F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31983B5BF6110410B54BE607 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DDImageBrowser/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"-D",
+					_FOR_DEBUG_,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

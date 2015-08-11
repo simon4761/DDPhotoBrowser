@@ -10,4 +10,19 @@
 
 @implementation DDPhoto
 
+- (id)initWithOriginImageUrl:(NSString *)originImageUrl
+{
+    return [self initWithOriginImageUrl:originImageUrl withSelectView:nil];
+}
+
+- (id)initWithOriginImageUrl:(NSString *)originImageUrl withSelectView:(UIImageView *)selectView
+{
+    self = [super init];
+    if (self) {
+        self.originImageUrl = originImageUrl;
+        self.selectView = selectView;
+    }
+    return self;
+}
+
 @end

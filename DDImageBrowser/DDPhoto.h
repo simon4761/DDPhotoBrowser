@@ -7,11 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface DDPhoto : NSObject
 
-@property (nonatomic , strong) NSString *smallImageUrl;
-@property (nonatomic , strong) NSString *bigImageUrl;
+@property (nonatomic , strong) NSString *originImageUrl;
+//@property (nonatomic , strong) NSString *bigImageUrl;
 //@property (nonatomic , strong) UIImageView *holder;
+@property (nonatomic , strong) UIImageView *selectView;
+
+- (id)initWithOriginImageUrl:(NSString *)originImageUrl;
+- (id)initWithOriginImageUrl:(NSString *)originImageUrl withSelectView:(UIImageView *)selectView;
 
 @end
