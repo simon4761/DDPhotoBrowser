@@ -1,1 +1,1 @@
-#DDImageBrowser
+# DDPhotoBrowser
