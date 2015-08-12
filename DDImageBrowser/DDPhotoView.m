@@ -102,18 +102,7 @@
 {
     CGFloat width = imageToShow.size.width/[UIScreen mainScreen].scale;
     CGFloat height = imageToShow.size.height/[UIScreen mainScreen].scale;
-    
-    
-    // 不超过当前view大小
-    //    if (width>self.width) {
-    //        height = height*self.width/width;
-    //        width = self.width;
-    //    }
-    //    if (height>self.height) {
-    //        width = width*self.height/height;
-    //        height = self.height;
-    //    }
-    
+
     if (width/height>self.frame.size.width/self.frame.size.height) {
         height = self.frame.size.width*height/width;
         width = self.frame.size.width;
@@ -143,7 +132,10 @@
 
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView
 {
-    _imageView.frame = CGRectMake(floor((MAX(scrollView.contentSize.width, scrollView.frame.size.width)-_imageView.frame.size.width)/2), floor((MAX(scrollView.contentSize.height, scrollView.frame.size.height)-_imageView.frame.size.height)/2), _imageView.frame.size.width, _imageView.frame.size.height);
+    _imageView.frame = CGRectMake(floor((MAX(scrollView.contentSize.width, scrollView.frame.size.width)-_imageView.frame.size.width)/2),
+                                  floor((MAX(scrollView.contentSize.height, scrollView.frame.size.height)-_imageView.frame.size.height)/2),
+                                  _imageView.frame.size.width,
+                                  _imageView.frame.size.height);
 }
 
 @end
