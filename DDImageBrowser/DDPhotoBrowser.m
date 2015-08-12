@@ -24,19 +24,13 @@
 @property (nonatomic , strong) UIView *maskView;
 
 @property (nonatomic , strong) UIPageControl *pageControl;
+//
+////可复用的PhotoView;
+//@property (nonatomic , strong) NSMutableSet *reusePhotoViewSet;
 
 @end
 
 @implementation DDPhotoBrowser
-
-- (id)initWithPhotosArray:(NSArray *)photosArray
-{
-    self = [super init];
-    if (self) {
-        self.photosArray = [NSMutableArray arrayWithArray:photosArray];
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -65,26 +59,45 @@
     [self.scrollView addGestureRecognizer:self.doubleTapRecognizer];
 
     [self.scrollView addGestureRecognizer:self.longPressReconizer];
+    
+    [self configPhotoView];
 }
 
-
-#pragma mark- Setter Methods
-
-- (void)setPhotosArray:(NSMutableArray *)photosArray
+- (void)configPhotoView
 {
-    _photosArray = photosArray;
-
-    for(int i = 0; i < [_photosArray count] ; i++){
+    //配置DDPhotoView
+    NSInteger count = 0;
+    if (self.dataSource && [self.dataSource respondsToSelector:@selector(numbersOfPhotosInPhotoBrowser:)]) {
+        count = [self.dataSource numbersOfPhotosInPhotoBrowser:self];
+    }
+    
+    for(int i = 0; i < count ; i++){
+        
+        NSString *url = @"";
+        if (self.dataSource && [self.dataSource respondsToSelector:@selector(photoBrowser:urlWithPhotoIndex:)]) {
+            url = [self.dataSource photoBrowser:self urlWithPhotoIndex:i];
+        }
+        
+        UIImageView *selectView = nil;
+        
+        if (self.dataSource && [self.dataSource respondsToSelector:@selector(photoBrowser:selectViewWithPhotoIndex:)]) {
+            selectView = [self.dataSource photoBrowser:self selectViewWithPhotoIndex:i];
+        }
+        
+        DDPhoto *photo = [DDPhoto new];
+        photo.originImageUrl = url;
+        photo.selectView = selectView;
+        
         DDPhotoView *photoView = [DDPhotoView new];
-        photoView.item = [_photosArray objectAtIndex:i];
+        photoView.item = photo;
         photoView.frame = CGRectMake(i * [UIScreen mainScreen].bounds.size.width , 0, photoView.bounds.size.width, photoView.bounds.size.height);
         [self.imagesArray addObject:photoView];
         [self.scrollView addSubview:photoView];
     }
     
-    self.scrollView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width * _photosArray.count, 0);
+    self.scrollView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width * count, 0);
     self.scrollView.contentOffset = CGPointMake(self.currectPhotoIndex * [UIScreen mainScreen].bounds.size.width, 0);
-    self.pageControl.numberOfPages = photosArray.count;
+    self.pageControl.numberOfPages = count;
     self.pageControl.currentPage = self.currectPhotoIndex;
 }
 
@@ -206,6 +219,17 @@
 {
     DDPhotoView *photoView = [self presentPhotoView];
     [photoView setZoomScale:[[self presentPhotoView] minimumZoomScale] animated:YES];
+    [self caculateCurrectPhotoIndex:scrollView];
+
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    [self caculateCurrectPhotoIndex:scrollView];
+}
+
+- (void)caculateCurrectPhotoIndex:(UIScrollView *)scrollView
+{
     CGFloat contentOffset = self.scrollView.contentOffset.x;
     CGFloat scrollViewWidth = self.scrollView.frame.size.width;
     self.currectPhotoIndex = contentOffset / scrollViewWidth;

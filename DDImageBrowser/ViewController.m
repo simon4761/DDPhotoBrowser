@@ -10,7 +10,7 @@
 #import <UIImageView+WebCache.h>
 #import "DDPhotoBrowser.h"
 
-@interface ViewController ()
+@interface ViewController () <DDPhotoBrowserDataSource>
 
 @property (nonatomic , strong) NSArray *imageArray;
 
@@ -64,18 +64,24 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     DDPhotoBrowser *photoBrowser = [DDPhotoBrowser new];
-    NSMutableArray *array = [[NSMutableArray alloc] init];
-    
-    for (NSString *url in self.imageArray) {
-        DDPhoto *photo = [[DDPhoto alloc] init];
-        photo.originImageUrl = url;
-
-        [array addObject:photo];
-    }
-    DDPhoto *photo = [array objectAtIndex:indexPath.row];
-    photo.selectView = [collectionView cellForItemAtIndexPath:indexPath];
+    photoBrowser.dataSource = self;
     photoBrowser.currectPhotoIndex = indexPath.row;
-    photoBrowser.photosArray = array;
     [photoBrowser show];
 }
+
+- (NSString *)photoBrowser:(DDPhotoBrowser *)photoBrowser urlWithPhotoIndex:(NSInteger)index
+{
+    return [self.imageArray objectAtIndex:index];
+}
+
+- (NSInteger)numbersOfPhotosInPhotoBrowser:(DDPhotoBrowser *)photoBrowser
+{
+    return self.imageArray.count;
+}
+
+-(UIImageView *)photoBrowser:(DDPhotoBrowser *)photoBrowser selectViewWithPhotoIndex:(NSInteger)index
+{
+    return nil;
+}
+
 @end

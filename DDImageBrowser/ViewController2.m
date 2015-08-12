@@ -10,7 +10,7 @@
 #import <UIImageView+WebCache.h>
 #import "DDPhotoBrowser.h"
 
-@interface ViewController2 ()
+@interface ViewController2 ()<DDPhotoBrowserDataSource>
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView1;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView2;
@@ -78,18 +78,38 @@
 {
     NSInteger index = recognizer.view.tag - 1001;
     DDPhotoBrowser *photoBrowser = [DDPhotoBrowser new];
-    NSMutableArray *array = [[NSMutableArray alloc] init];
-    
-    for (NSInteger i = 0; i < self.photoArray.count; i ++) {
-        DDPhoto *photo = [[DDPhoto alloc] init];
-        photo.originImageUrl = [self.imageArray objectAtIndex:i];
-        photo.selectView = [self.photoArray objectAtIndex:i];
-        [array addObject:photo];
-    }
-
+//    NSMutableArray *array = [[NSMutableArray alloc] init];
+//    
+//    for (NSInteger i = 0; i < self.photoArray.count; i ++) {
+//        DDPhoto *photo = [[DDPhoto alloc] initWithOriginImageUrl:[self.imageArray objectAtIndex:i] withSelectView:[self.photoArray objectAtIndex:i]];
+//        [array addObject:photo];
+//    }
+//
     photoBrowser.currectPhotoIndex = index;
-    photoBrowser.photosArray = array;
+    photoBrowser.dataSource = self;
+//    photoBrowser.photosArray = array;
     [photoBrowser show];
 }
+
+- (NSInteger)numbersOfPhotosInPhotoBrowser:(DDPhotoBrowser *)photoBrowser
+{
+    return self.photoArray.count;
+}
+
+- (NSString *)photoBrowser:(DDPhotoBrowser *)photoBrowser urlWithPhotoIndex:(NSInteger)index
+{
+    return [self.imageArray objectAtIndex:index];
+}
+
+- (UIImageView *)photoBrowser:(DDPhotoBrowser *)photoBrowser selectViewWithPhotoIndex:(NSInteger)index
+{
+    return [self.photoArray objectAtIndex:index];
+
+}
+
+
+//- (NSInteger) count;
+//- (NSString) url withIndex:(NSInteger);
+//- (UIImageView *) selcetView withIndex:(NSInteger);
 
 @end

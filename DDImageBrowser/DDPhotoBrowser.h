@@ -9,13 +9,20 @@
 #import <UIKit/UIKit.h>
 #import "DDPhotoView.h"
 
+@class DDPhotoBrowser;
+
+@protocol DDPhotoBrowserDataSource <NSObject>
+
+- (NSInteger)numbersOfPhotosInPhotoBrowser:(DDPhotoBrowser *)photoBrowser;
+- (NSString *)photoBrowser:(DDPhotoBrowser *)photoBrowser urlWithPhotoIndex:(NSInteger)index;
+- (UIImageView *)photoBrowser:(DDPhotoBrowser *)photoBrowser selectViewWithPhotoIndex:(NSInteger)index;
+
+@end
+
 @interface DDPhotoBrowser : UIViewController
 
-///存放DDPhoto的数组
-@property (nonatomic , strong) NSMutableArray *photosArray;
 @property (nonatomic , assign) NSInteger currectPhotoIndex;
-
-- (id)initWithPhotosArray:(NSArray *)photosArray;
+@property (nonatomic) id<DDPhotoBrowserDataSource> dataSource;
 
 - (void)show;
 - (void)hide;
